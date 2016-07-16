@@ -1,6 +1,6 @@
 {
   "name": "gradle-exec",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Under Development",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,10 @@
   },
   "author": "Sashank Alladi",
   "license": "MIT",
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/sashank6/gradle-exec.git"
+  }
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^2.5.3",
