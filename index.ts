@@ -1,11 +1,16 @@
+
 /**
  * Author: Sashank Alladi
  */
+
+///<reference path="typings/main.d.ts"/>
+
 import fs=require('fs');
 import path=require('path');
 import shell=require('shelljs');
 import child_process=require('child_process');
 import spawn=child_process.spawn;
+import reference = ts.HighlightSpanKind.reference;
 class Gradle {
     private gradlePath:string;
     private fileExists:boolean;
@@ -40,7 +45,10 @@ class Gradle {
         if (gradlecheck.stderr.length > 0) {
             console.log('No gradle installed');
         } else {
-            let cmd = shell.exec('gradle ' + command);
+            let cmd = shell.exec('gradle ' + command,function(code:any,stdout:any,stderr:string){
+                console.log('Exit code:', code);
+                console.log('gradle-exec:', stdout);
+            });
 
         }
         process.chdir(this.current_dir);

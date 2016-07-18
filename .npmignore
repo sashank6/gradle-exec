@@ -1,0 +1,6 @@
+/**/*.ts
+typings/
+.gitignore
+typings.json
+.idea/
+node_modules/
